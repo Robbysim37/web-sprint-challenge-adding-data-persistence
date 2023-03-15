@@ -6,7 +6,6 @@ exports.up = async function(knex) {
     await knex.schema
     .createTable(`project`, table => {
         table.increments(`project_id`)
-        //test
         table.string(`product_name`).notNullable()
         table.string(`project_description`)
         table.integer(`product_completed`).notNullable().defaultTo(0)
