@@ -8,7 +8,13 @@ router.get("/",(req,res) => {
     })
 })
 router.post("/",(req,res) => {
-
+    projectModel.insertProject(req.body).then(promise => {
+        if(promise === "taken"){
+            res.status(500).json({message: "project name already exists"})
+        }else{
+            res.status(200).json(promise)
+        }
+    })
 })
 
 module.exports = router

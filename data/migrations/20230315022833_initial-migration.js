@@ -23,7 +23,7 @@ exports.up = async function(knex) {
         table.integer(`project_id`)
         .notNullable()
         .references(`project_id`)
-        .inTable(`project`)
+        .inTable(`projects`)
         .onDelete(`RESTRICT`)
         .onUpdate(`RESTRICT`)
     })
